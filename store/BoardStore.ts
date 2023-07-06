@@ -1,3 +1,4 @@
+import { Board, Column, TypedColumn } from "@/typing";
 import { getTasksGroupedByColumn } from "@/utils/getTasksGroupedByColumn";
 import { create } from "zustand";
 
