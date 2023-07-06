@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-html,
+/* html,
 body,
 div,
 span,
@@ -90,10 +90,10 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-}
+} */
 
 /* HTML5 display-role reset for older browsers */
-article,
+/* article,
 aside,
 details,
 figcaption,
@@ -132,4 +132,4 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-}
+} */
