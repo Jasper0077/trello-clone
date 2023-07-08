@@ -8,6 +8,9 @@ interface BoardState {
     getBoard: () => void;
     setBoardState: (board: Board) => void;
     updateTasksInDB: (task: Todo, columnID: TypedColumn) => void;
+
+    searchVal: string;
+    setSearchVal: (searchVal: string) => void;
 }
 
 export const useBoardStore = create<BoardState>((set) => ({
@@ -29,5 +32,7 @@ export const useBoardStore = create<BoardState>((set) => ({
                 status: columnId
             }
         )
-    }
-}))
+    },
+    searchVal: "",
+    setSearchVal: (searchVal) => set({ searchVal })
+}));

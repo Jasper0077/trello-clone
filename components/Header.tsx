@@ -4,6 +4,7 @@ import Image from "next/image";
 import Searchbar from "./Searchbar";
 import Avatar from "react-avatar";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
+import { useBoardStore } from "@/store/BoardStore";
 
 function classNames(...classes: Array<string>) {
   return classes.filter(Boolean).join(" ");
@@ -13,7 +14,7 @@ export default function Header() {
   return (
     <header>
       <nav
-        className="mx-auto flex flex-col sm:flex-row max-w-full items-center p-6 lg:px-8 bg-gray-500/10"
+        className="mx-auto flex flex-col sm:flex-row max-w-full items-center sm:items-end sm:justify-center p-6 lg:px-8 bg-gray-500/10 gap-4"
         aria-label="Global"
       >
         <div
