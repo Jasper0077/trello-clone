@@ -93,7 +93,7 @@ video {
 } */
 
 /* HTML5 display-role reset for older browsers */
-/* article,
+article,
 aside,
 details,
 figcaption,
@@ -121,15 +121,15 @@ q {
     quotes: none;
 }
 
-blockquote:before,
+/* blockquote:before,
 blockquote:after,
 q:before,
 q:after {
     content: '';
     content: none;
-}
+} */
 
 table {
     border-collapse: collapse;
     border-spacing: 0;
-} */
+}
