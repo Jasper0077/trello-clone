@@ -4,7 +4,6 @@ import React from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Hotkeys from "react-hot-keys";
 import { useBoardStore } from "@/store/BoardStore";
-import { debounce } from "lodash";
 import { Input } from "postcss";
 
 interface Props {}

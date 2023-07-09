@@ -1,16 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import Searchbar from "./Searchbar";
+import React from "react";
 import Avatar from "react-avatar";
-import { UserCircleIcon } from "@heroicons/react/24/solid";
+
+import useGenerateSummary from "@/app/hooks/useGenerateSummary";
 import { useBoardStore } from "@/store/BoardStore";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
+
+import Searchbar from "./Searchbar";
 
 function classNames(...classes: Array<string>) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Header() {
+  const [board] = useBoardStore((state) => [state.board]);
+  const { loading, summary } = useGenerateSummary({ board });
+
+  React.useEffect(() => {
+    console.log("board outside hoook: ", board);
+    console.log("summary: ", summary, "loading: ", loading);
+  }, [summary, loading, board]);
+
   return (
     <header>
       <nav
@@ -59,7 +71,11 @@ export default function Header() {
       </nav>
       <div className="flex items-center justify-center px-5 md:py-5">
         <p className="flex items-center text-sm font-light pr-5 shadow-xl rounded-2xl w-fit bg-white max-w-3xl text-[#0055D1]">
-          <UserCircleIcon className="inline-block h-10 w-10 tex-[#0055D1] mr-1" />
+          <UserCircleIcon
+            className={`inline-block h-10 w-10 tex-[#0055D1] mr-1 ${
+              loading && "animate-spin"
+            }`}
+          />
           GPT is summarising your task for the day...
         </p>
       </div>
